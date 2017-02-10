@@ -1,5 +1,7 @@
 package hw3_2;
 
+import java.io.*;
+
 /**
  * 2. Написать класс TextContainer, который содержит в себе строку.
  С помощью механизма аннотаций указать:
@@ -17,10 +19,12 @@ package hw3_2;
 
 @SaveTo(path="c:\\file.txt")
 public class TextContainer {
-    String text = "Reflection provides a means for invoking methods on a class";
+    static String text = ( (Double)(Math.random()*100000) ).toString(); //to generate different string every run
 
     @Saver
-    public void save(){
-
+    public void save(String fileName) throws IOException {
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName)));
+        out.write(this.text);
+        out.close();
     }
 }
