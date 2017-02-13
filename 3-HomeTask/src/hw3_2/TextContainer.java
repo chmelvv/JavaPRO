@@ -17,7 +17,7 @@ import java.io.*;
  }
  */
 
-@SaveTo(path="c:\\file.txt")
+@SaveTo(path="c:\\temp\\file.txt")
 public class TextContainer {
     static String text = ( (Double)(Math.random()*100000) ).toString(); //to generate different string every run
 
